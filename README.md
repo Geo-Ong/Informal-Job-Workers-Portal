@@ -29,7 +29,4 @@ Users can register, post jobs, apply for jobs, and manage applications — all f
 - Prevents duplicate applications
 - Only the job poster can view applicants for their jobs
 
----
-
-## 🗂️ Project Structure
 
