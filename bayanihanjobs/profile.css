@@ -1,0 +1,342 @@
+/* --- GLOBAL STYLES --- */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  background: linear-gradient(135deg, #0073e6, #1343ac);
+  padding: 40px 80px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  color: white;
+}
+
+/* Profile Image */
+.profile-container {
+  display: flex;
+  align-items: center; /* vertically center the image and text */
+  gap: 20px; /* space between image and info */
+  padding: 20px;
+}
+
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* make it circular */
+  object-fit: cover; /* prevent distortion */
+  border: 3px solid #ddd;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.profile-info p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Optional: Stack on small screens */
+@media (max-width: 600px) {
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+social-links {
+  margin-top: 8px;
+}
+
+.social-links p {
+  margin: 3px 0;
+  color: #cfd8e8;
+}
+
+/* Edit Profile Button inside header */
+#edit-profile-btn, #update-skills-btn {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #fff;
+  color: #0073e6;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+#edit-profile-btn:hover, #update-skills-btn:hover {
+  background-color: #e6f0ff;
+  transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE VIEW --- */
+@media (max-width: 768px) {
+  .header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+      gap: 20px;
+  }
+
+  .header img {
+      width: 120px;
+      height: 120px;
+  }
+
+  .profile-info {
+      align-items: center;
+  }
+}
+
+.profile-info h2 {
+  margin: 10px 0 5px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.profile-info p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.social-links {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.social-links p {
+  color: #504d4d;
+  font-size: 15px;
+}
+
+/* --- BUTTONS --- */
+#edit-profile-btn, #update-skills-btn {
+  margin-top: 15px;
+  padding: 10px 18px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+#edit-profile-btn:hover, #update-skills-btn:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px);
+}
+
+/* --- CONTENT AREA --- */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin: 40px 50px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #1343ac;
+  font-size: 20px;
+}
+
+/* --- CHAT BUTTON --- */
+.chat-btn {
+  display: inline-block;
+  background: #1343ac;
+  color: white;
+  text-align: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.chat-btn:hover {
+  background: #0d2a75;
+  transform: translateY(-2px);
+}
+
+/* --- RATING --- */
+.rating {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.rating span {
+  color: gold;
+}
+
+/* --- MODAL --- */
+#edit-profile-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+#update-skills-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -55%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+#edit-profile-modal form, #update-skills-modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+#edit-profile-modal label, #update-skills-modal label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+#edit-profile-modal input,
+#edit-profile-modal textarea, #update-skills-modal input,
+#update-skills-modal textarea {
+  margin-bottom: 15px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+#edit-profile-modal input:focus,
+#edit-profile-modal textarea:focus, #update-skills-modal input:focus,
+#update-skills-modal textarea:focus {
+  border-color: #0073e6;
+  outline: none;
+}
+
+#edit-profile-modal button, #update-skills-modal button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+#edit-profile-modal button[type="submit"], #update-skills-modal button[type="submit"] {
+  background-color: #0073e6;
+  color: white;
+}
+
+#edit-profile-modal button[type="submit"]:hover, #update-skills-modal button[type="submit"]:hover {
+  background-color: #005bb5;
+}
+
+#edit-profile-modal button#cancel-edit, #update-skills-modal button#cancel-skills-edit {
+  background-color: #ccc;
+  color: black;
+  margin-top: 8px;
+}
+
+#edit-profile-modal button#cancel-edit:hover, #update-skills-modal button#cancel-skills-edit:hover {
+  background-color: #999;
+}
+
+/* --- BLUR BACKGROUND WHEN MODAL IS ACTIVE --- */
+#blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+body.modal-active #blur-background {
+  display: block;
+}
+
+body.modal-active > *:not(#edit-profile-modal):not(#update-skills-modal):not(#blur-background) {
+  filter: blur(5px);
+  pointer-events: none; /* Disable interaction with background elements */
+}
+
+#edit-profile-modal,
+#update-skills-modal {
+  z-index: 1001; /* Ensure modals are above the blur background */
+  filter: none; /* Ensure modals are not blurred */
+  pointer-events: auto; /* Ensure modals and their children are interactive */
+}
+
+body.modal-active {
+  overflow: hidden;
+}
+.logout{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}

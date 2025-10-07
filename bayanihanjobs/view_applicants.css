@@ -1,0 +1,74 @@
+body{
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.applicant-card {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.applicant-card h3 {
+    margin: 0 0 10px;
+}
+
+.action-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.hire-btn, .reject-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.hire-btn {
+    background-color: #28a745;
+}
+
+.reject-btn {
+    background-color: #dc3545;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.status.pending {
+    color: #ff9800;
+}
+
+.status.hired {
+    color: #28a745;
+}
+
+.status.rejected {
+    color: #dc3545;
+}
+
+.no-applicants {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
